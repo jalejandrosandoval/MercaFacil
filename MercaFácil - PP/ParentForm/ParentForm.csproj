@@ -1,0 +1,630 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1241930E-5987-4171-9857-0BADD8E649A1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ParentForm</RootNamespace>
+    <AssemblyName>ParentForm</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>shopping cart.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Products\AddExp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Products\AddExp.Designer.cs">
+      <DependentUpon>AddExp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetMultiplesTablas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetMultiplesTablas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="p_ParamFact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="p_ParamFact.Designer.cs">
+      <DependentUpon>p_ParamFact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\MoreVendorSell.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MoreVendorSell.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\MoreClientBuy.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MoreClientBuy.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\MostSoldProduct.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MostSoldProduct.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\FactReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FactReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportClientForm.Designer.cs">
+      <DependentUpon>ReportClientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportClient.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportClient.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportProvider.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportProvider.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportProviderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportProviderForm.Designer.cs">
+      <DependentUpon>ReportProviderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportProduct.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportProduct.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportProductForm.Designer.cs">
+      <DependentUpon>ReportProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportUser.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportUser.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportUserForm.Designer.cs">
+      <DependentUpon>ReportUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportFactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportFactForm.Designer.cs">
+      <DependentUpon>ReportFactForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportMostSoldProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportMostSoldProduct.Designer.cs">
+      <DependentUpon>ReportMostSoldProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportMoreClientBuy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportMoreClientBuy.Designer.cs">
+      <DependentUpon>ReportMoreClientBuy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportMoreVendorSell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportMoreVendorSell.Designer.cs">
+      <DependentUpon>ReportMoreVendorSell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportFact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportFact.Designer.cs">
+      <DependentUpon>ReportFact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportLog.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportLog.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportLogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportLogForm.Designer.cs">
+      <DependentUpon>ReportLogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Edit_Telephone_User_Event.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\Edit_Telephone_User_Event.Designer.cs">
+      <DependentUpon>Edit_Telephone_User_Event.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Edit_Num_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\Edit_Num_User.Designer.cs">
+      <DependentUpon>Edit_Num_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Add_Edit_Num_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\Add_Edit_Num_User.Designer.cs">
+      <DependentUpon>Add_Edit_Num_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clients\Add_Edit_Telephone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients\Add_Edit_Telephone.Designer.cs">
+      <DependentUpon>Add_Edit_Telephone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\ChooseQuantityBuy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\ChooseQuantityBuy.Designer.cs">
+      <DependentUpon>ChooseQuantityBuy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clients\AddNumClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients\AddNumClient.Designer.cs">
+      <DependentUpon>AddNumClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clients\EdittelephoneClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients\EdittelephoneClient.Designer.cs">
+      <DependentUpon>EdittelephoneClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clients\Edit_Telephone_Client_Event.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients\Edit_Telephone_Client_Event.Designer.cs">
+      <DependentUpon>Edit_Telephone_Client_Event.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vendors\SearchVendorBuy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vendors\SearchVendorBuy.Designer.cs">
+      <DependentUpon>SearchVendorBuy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\AddNumUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\AddNumUser.Designer.cs">
+      <DependentUpon>AddNumUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\ChooseQuantity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\ChooseQuantity.Designer.cs">
+      <DependentUpon>ChooseQuantity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clients\AddClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients\AddClient.Designer.cs">
+      <DependentUpon>AddClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clients\DeleteClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients\DeleteClients.Designer.cs">
+      <DependentUpon>DeleteClients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Products\DeleteProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Products\DeleteProducts.Designer.cs">
+      <DependentUpon>DeleteProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\SearchClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\SearchClient.Designer.cs">
+      <DependentUpon>SearchClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\DeleteUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\DeleteUsers.Designer.cs">
+      <DependentUpon>DeleteUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MercaFacil_2DataSet.cs">
+      <DependentUpon>MercaFacil_2DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Product.cs" />
+    <Compile Include="Compras\Compras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\Compras.Designer.cs">
+      <DependentUpon>Compras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vendors\SearchVendors_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vendors\SearchVendors_Delete.Designer.cs">
+      <DependentUpon>SearchVendors_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ShoppingCart.cs" />
+    <Compile Include="MercaFacil_2DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MercaFacil_2DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Vendors\CreateVendor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vendors\CreateVendor.Designer.cs">
+      <DependentUpon>CreateVendor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Products\CreateProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Products\CreateProduct.Designer.cs">
+      <DependentUpon>CreateProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\CreateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\CreateUser.Designer.cs">
+      <DependentUpon>CreateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Devoluciones\Devolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Devoluciones\Devolucion.Designer.cs">
+      <DependentUpon>Devolucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Devoluciones\DevolucionDetalles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Devoluciones\DevolucionDetalles.Designer.cs">
+      <DependentUpon>DevolucionDetalles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MdiParent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MdiParent.Designer.cs">
+      <DependentUpon>MdiParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clients\EditClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients\EditClients.Designer.cs">
+      <DependentUpon>EditClients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Products\EditProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Products\EditProducts.Designer.cs">
+      <DependentUpon>EditProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clients\SearchClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients\SearchClients.Designer.cs">
+      <DependentUpon>SearchClients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Products\SearchProductscs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Products\SearchProductscs.Designer.cs">
+      <DependentUpon>SearchProductscs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\EditUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\EditUsers.Designer.cs">
+      <DependentUpon>EditUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\SearchUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\SearchUser.Designer.cs">
+      <DependentUpon>SearchUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vendors\EditVendors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vendors\EditVendors.Designer.cs">
+      <DependentUpon>EditVendors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vendors\SearchVendors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vendors\SearchVendors.Designer.cs">
+      <DependentUpon>SearchVendors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Ventas.Designer.cs">
+      <DependentUpon>Ventas.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Products\AddExp.resx">
+      <DependentUpon>AddExp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="p_ParamFact.resx">
+      <DependentUpon>p_ParamFact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\MoreVendorSell.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MoreVendorSell.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\MoreClientBuy.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MoreClientBuy.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\MostSoldProduct.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MostSoldProduct.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FactReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FactReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportClientForm.resx">
+      <DependentUpon>ReportClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportClient.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportClient.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportLogForm.resx">
+      <DependentUpon>ReportLogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportMoreClientBuy.resx">
+      <DependentUpon>ReportMoreClientBuy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportMoreVendorSell.resx">
+      <DependentUpon>ReportMoreVendorSell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportMostSoldProduct.resx">
+      <DependentUpon>ReportMostSoldProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportProductForm.resx">
+      <DependentUpon>ReportProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportProvider.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportProvider.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportProviderForm.resx">
+      <DependentUpon>ReportProviderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportProduct.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportProduct.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportUser.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportUser.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportUserForm.resx">
+      <DependentUpon>ReportUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportFactForm.resx">
+      <DependentUpon>ReportFactForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportFact.resx">
+      <DependentUpon>ReportFact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportLog.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportLog.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\Edit_Telephone_User_Event.resx">
+      <DependentUpon>Edit_Telephone_User_Event.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\Edit_Num_User.resx">
+      <DependentUpon>Edit_Num_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\Add_Edit_Num_User.resx">
+      <DependentUpon>Add_Edit_Num_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients\Add_Edit_Telephone.resx">
+      <DependentUpon>Add_Edit_Telephone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients\EdittelephoneClient.resx">
+      <DependentUpon>EdittelephoneClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\ChooseQuantityBuy.resx">
+      <DependentUpon>ChooseQuantityBuy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients\AddNumClient.resx">
+      <DependentUpon>AddNumClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients\Edit_Telephone_Client_Event.resx">
+      <DependentUpon>Edit_Telephone_Client_Event.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendors\SearchVendorBuy.resx">
+      <DependentUpon>SearchVendorBuy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\AddNumUser.resx">
+      <DependentUpon>AddNumUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\ChooseQuantity.resx">
+      <DependentUpon>ChooseQuantity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients\AddClient.resx">
+      <DependentUpon>AddClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients\DeleteClients.resx">
+      <DependentUpon>DeleteClients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Products\DeleteProducts.resx">
+      <DependentUpon>DeleteProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\Compras.resx">
+      <DependentUpon>Compras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\SearchClient.resx">
+      <DependentUpon>SearchClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendors\SearchVendors_Delete.resx">
+      <DependentUpon>SearchVendors_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\DeleteUsers.resx">
+      <DependentUpon>DeleteUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendors\CreateVendor.resx">
+      <DependentUpon>CreateVendor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Products\CreateProduct.resx">
+      <DependentUpon>CreateProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\CreateUser.resx">
+      <DependentUpon>CreateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Devoluciones\Devolucion.resx">
+      <DependentUpon>Devolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Devoluciones\DevolucionDetalles.resx">
+      <DependentUpon>DevolucionDetalles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MdiParent.resx">
+      <DependentUpon>MdiParent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients\EditClients.resx">
+      <DependentUpon>EditClients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Products\EditProducts.resx">
+      <DependentUpon>EditProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients\SearchClients.resx">
+      <DependentUpon>SearchClients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Products\SearchProductscs.resx">
+      <DependentUpon>SearchProductscs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\EditUsers.resx">
+      <DependentUpon>EditUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\SearchUser.resx">
+      <DependentUpon>SearchUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendors\EditVendors.resx">
+      <DependentUpon>EditVendors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Vendors\SearchVendors.resx">
+      <DependentUpon>SearchVendors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Ventas.resx">
+      <DependentUpon>Ventas.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DataSetMultiplesTablas.xsc">
+      <DependentUpon>DataSetMultiplesTablas.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetMultiplesTablas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetMultiplesTablas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetMultiplesTablas.xss">
+      <DependentUpon>DataSetMultiplesTablas.xsd</DependentUpon>
+    </None>
+    <None Include="MercaFacil_2DataSet.xsc">
+      <DependentUpon>MercaFacil_2DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MercaFacil_2DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MercaFacil_2DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MercaFacil_2DataSet.xss">
+      <DependentUpon>MercaFacil_2DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="shopping cart.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
